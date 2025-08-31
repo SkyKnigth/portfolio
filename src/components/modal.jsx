@@ -33,9 +33,9 @@ export default function Modal({ project, onClose }) {
 
         {/* Images en haut */}
         <div className="modal-images">
-          <img src={project.image} alt={project.title} />
-          <img src={project.imageLogin} alt={`${project.title} login`} />
-          <img src={project.imageDashboard} alt={`${project.title} dashboard`} />
+            {project.images && project.images.map((img, index) => (
+                <img key={index} src={img} alt={`${project.title} - ${index + 1}`} />
+            ))}
         </div>
 
         {/* Texte description */}

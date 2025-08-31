@@ -3,6 +3,7 @@ import '../styles/portfolio.scss'
 import argentbank from '../assets/argentbank.png'
 import argentbankLogin from '../assets/argentbank-login.png'
 import argentbankDashboard from '../assets/argentbank-dashboard.png'
+import argentbankEdit from '../assets/argentbank-edit.png'
 import events from '../assets/724events.png'
 import Modal from '../components/modal.jsx'
 
@@ -11,9 +12,7 @@ const projects = [
     id: 1,
     title: "ARGENT BANK",
     category: "Création site internet",
-    image: argentbank,
-    imageLogin: argentbankLogin,
-    imageDashboard: argentbankDashboard,
+    images: [argentbank, argentbankLogin, argentbankDashboard, argentbankEdit],
     type: "site",
     description: "Application bancaire avec authentification, tableau de bord et gestion des transactions.",
     year: 2024,
@@ -24,7 +23,7 @@ const projects = [
     id: 2,
     title: "724EVENTS",
     category: "Maintenance",
-    image: events,
+    images: [events, events, events],
     type: "maintenance",
     description: "Refonte et maintenance d’un site vitrine pour agence évènementielle.",
     year: 2024,
@@ -78,9 +77,9 @@ export default function Portfolio() {
               className="portfolio-card"
               onClick={() => setActiveProject(p)} // 👉 clic ouvre modal
             >
-              <div className="portfolio-image">
-                <img src={p.image} alt={p.title} />
-              </div>
+            <div className="portfolio-image">
+                <img src={p.images[0]} alt={p.title} />
+            </div>
               <div className="portfolio-info">
                 <h3>{p.title}</h3>
                 <p>{p.category}</p>

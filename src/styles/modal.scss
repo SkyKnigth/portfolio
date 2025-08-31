@@ -46,8 +46,8 @@
   left: 0;
   top: 0;
   border: 2px solid #2ecc71;
-  border-radius: 50%;
-  padding: 0.6rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
   background: #fff;
   cursor: pointer;
   font-size: 1.2rem;
@@ -56,15 +56,16 @@
 
 /* Images */
 .modal-images {
-  display: flex;
+  display: grid;
   justify-content: center;
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr); // 2 colonnes
+  gap: 2.5rem;
   margin-bottom: 2rem;
 }
 
 .modal-images img {
-  width: 32%;
-  height: 300px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -147,4 +148,10 @@
 
 .visit-btn:hover {
   background: #27ae60;
+}
+
+@media (max-width: 768px) {
+  .modal-images {
+    grid-template-columns: 1fr;
+  }
 }
