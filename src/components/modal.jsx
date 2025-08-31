@@ -1,10 +1,19 @@
-import React from "react"
+import React, { useEffect } from "react"
 import "../styles/modal.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faXmark, faCalendar, faTags } from "@fortawesome/free-solid-svg-icons"
 
 export default function Modal({ project, onClose }) {
   if (!project) return null
+
+  // Bloquer le scroll du site quand la modal est ouverte
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    document.body.style.overflow = "hidden"
+    return () => {
+      document.body.style.overflow = "auto"
+    }
+  }, [])
 
   return (
     <div className="modal-overlay">
@@ -25,8 +34,8 @@ export default function Modal({ project, onClose }) {
         {/* Images en haut */}
         <div className="modal-images">
           <img src={project.image} alt={project.title} />
-          <img src={project.image} alt={project.title} />
-          <img src={project.image} alt={project.title} />
+          <img src={project.imageLogin} alt={`${project.title} login`} />
+          <img src={project.imageDashboard} alt={`${project.title} dashboard`} />
         </div>
 
         {/* Texte description */}
@@ -48,10 +57,10 @@ export default function Modal({ project, onClose }) {
           <div className="modal-right">
             <h3>INFOS PROJET WEB</h3>
             <p>
-              <FontAwesomeIcon icon="calendar" /> <strong>Année :</strong> 2024
+              <FontAwesomeIcon icon={faCalendar} /> <strong>Année :</strong> 2024
             </p>
             <p>
-              <FontAwesomeIcon icon="tags" /> <strong>Catégorie :</strong>{" "}
+              <FontAwesomeIcon icon={faTags} /> <strong>Catégorie :</strong>{" "}
               {project.category}
             </p>
             <div className="tags">

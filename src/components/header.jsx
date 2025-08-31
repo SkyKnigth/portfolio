@@ -1,29 +1,38 @@
-import React, { useState, useEffect } from 'react'
-import '../styles/header.scss'
+import React, { useState, useEffect } from "react"
+import "../styles/header.scss"
 
 export default function Header({ logoSrc }) {
-  // section active au chargement (hash ou accueil par défaut)
-  const [active, setActive] = useState(window.location.hash.replace('#', '') || "accueil")
+  const [active, setActive] = useState("accueil")
 
   useEffect(() => {
-    const onHashChange = () => {
-      setActive(window.location.hash.replace('#', '') || "accueil")
+    const sections = document.querySelectorAll("section, main") // récupère toutes les sections
+    const handleScroll = () => {
+      let current = "accueil"
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          current = section.id
+        }
+      })
+      setActive(current || "accueil")
     }
-    window.addEventListener("hashchange", onHashChange)
-    return () => window.removeEventListener("hashchange", onHashChange)
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <header className="site-header">
       <div className="container header-inner">
-        {/* Logo NON cliquable */}
+        
+        {/* Logo (non cliquable) */}
         <div className="brand">
           <img src={logoSrc} alt="Logo" />
         </div>
 
+        {/* Navigation */}
         <nav className="main-nav" aria-label="Navigation principale">
           <ul>
-            {/* Accueil - scrollTop forcé */}
             <li className={active === "accueil" ? "active" : ""}>
               <a 
                 href="#accueil" 
@@ -37,8 +46,6 @@ export default function Header({ logoSrc }) {
                 Accueil
               </a>
             </li>
-
-            {/* autres liens */}
             <li className={active === "services" ? "active" : ""}>
               <a href="#services">Services</a>
             </li>

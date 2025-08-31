@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import '../styles/portfolio.scss'
 import argentbank from '../assets/argentbank.png'
+import argentbankLogin from '../assets/argentbank-login.png'
+import argentbankDashboard from '../assets/argentbank-dashboard.png'
 import events from '../assets/724events.png'
 import Modal from '../components/modal.jsx'
 
@@ -10,6 +12,8 @@ const projects = [
     title: "ARGENT BANK",
     category: "Création site internet",
     image: argentbank,
+    imageLogin: argentbankLogin,
+    imageDashboard: argentbankDashboard,
     type: "site",
     description: "Application bancaire avec authentification, tableau de bord et gestion des transactions.",
     year: 2024,
