@@ -1,0 +1,105 @@
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff; /* remplacé var(--white) */
+  box-shadow: 0 1px 0 rgba(0,0,0,.06);
+
+  .container {
+  width: 95%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+  .header-inner {
+    height: 90px; /* remplacé var(--header-height) */
+  }
+
+  .brand {
+    img {
+      height: 44px;
+      display: block;
+    }
+  }
+
+  .brand-text {
+    font-weight: 700;
+    letter-spacing: .08em;
+  }
+
+  .main-nav {
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      padding: 1rem .25rem;
+      color: #111; /* remplacé var(--text) */
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+
+  .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+
+    li {
+      position: relative;
+
+      a {
+        text-decoration: none;
+        color: #000;
+        display: inline-block;
+        height: 90px;         /* même hauteur que le header */
+        line-height: 90px;    /* centre verticalement le texte */
+        padding: 0 25px;      /* un peu d’espace horizontal seulement */
+      }
+
+      &.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background: #000;
+        border-radius: 2px;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 68px; /* remplacé var(--header-height) */
+    left: 0;
+    right: 0;
+    background: #fff; /* remplacé var(--white) */
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+
+    &.open {
+      display: block;
+    }
+
+    ul {
+      flex-direction: column;
+      padding: .5rem 1rem;
+    }
+
+    a {
+      padding: .75rem 0;
+    }
+  }
+}

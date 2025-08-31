@@ -1,0 +1,136 @@
+/* Hero / Slider */
+.hero {
+  position: relative;
+  height: calc(100svh - var(--header-height));
+  min-height: 520px;
+  overflow: hidden;
+  background: #000;
+
+  .slides { height: 100%; display: grid; }
+
+  .headline {
+  font-size: clamp(2rem, 6vw, 4.25rem);
+  color: var(--white);
+  line-height: 1.1;
+  margin: .25rem 0;
+  white-space: pre-wrap;
+}
+
+
+  .slide {
+    position: relative;
+    height: 100%;
+    isolation: isolate;
+    display: none;
+
+    &.current { display: block; }
+
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(.55);
+      z-index: -1;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .slide-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;  
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #c8c8c8;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4.25rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+
+    .subhead {
+      color: #e9e9e9;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      margin: .5rem 0 0;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.8);
+    background: transparent;
+    color: #fff;
+    font-size: 2rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(2px);
+
+    &:hover { background: rgba(255,255,255,.1); }
+
+    &.left { left: 1rem; }
+    &.right { right: 1rem; }
+  }
+
+  .progress {
+    position: absolute;
+    left: 50%;
+    bottom: 3rem;
+    translate: -50% 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .bar {
+      width: 10cm;
+      height: 4mm;
+      border-radius: 3mm;
+      background: rgba(255,255,255,.2);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+      .fill {
+        position: absolute;
+        inset: 0;
+        width: 0%;
+        background: #fff;
+      }
+
+      .fill.active { animation: fill 5s linear forwards; }
+    }
+  }
+}
+
+@keyframes fill {
+  from { width: 0% }
+  to { width: 100% }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero .progress .bar .fill.active { animation: none; width: 100%; }
+}

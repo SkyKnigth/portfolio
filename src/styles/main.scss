@@ -1,0 +1,35 @@
+:root {
+  --header-height: 90px;
+  --container: min(1200px, 94vw);
+  --text: #111;
+  --muted: #5b5b5b;
+  --white: #fff;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+html {
+  scroll-behavior: smooth; /* scroll fluide */
+}
+
+section[id] {
+  scroll-margin-top: 90px; /* décale le scroll à cause du header fixe */
+}
+
+/* Sections */
+.section {
+  padding: 6rem 0;
+  border-top: 1px solid #f0f0f0;
+
+  .container { display: block; }
+  h2 { margin: 0 0 .5rem; }
+  p { color: var(--muted); max-width: 70ch; }
+}
+
