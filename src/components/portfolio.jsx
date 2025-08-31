@@ -2,19 +2,30 @@ import React, { useState } from 'react'
 import '../styles/portfolio.scss'
 import argentbank from '../assets/argentbank.png'
 import events from '../assets/724events.png'
+import Modal from '../components/modal.jsx'
 
 const projects = [
   {
+    id: 1,
     title: "ARGENT BANK",
     category: "Création site internet",
     image: argentbank,
-    type: "site"
+    type: "site",
+    description: "Application bancaire avec authentification, tableau de bord et gestion des transactions.",
+    year: 2024,
+    tech: ["React", "Redux", "API REST", "Sass"],
+    url: "https://skyknigth.github.io/ArgentBank"
   },
   {
+    id: 2,
     title: "724EVENTS",
     category: "Maintenance",
     image: events,
-    type: "maintenance"
+    type: "maintenance",
+    description: "Refonte et maintenance d’un site vitrine pour agence évènementielle.",
+    year: 2024,
+    tech: ["React", "Node.js", "MongoDB", "SEO"],
+    url: "https://skyknigth.github.io/724events"
   }
 ]
 
@@ -26,6 +37,7 @@ const filters = [
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("all")
+  const [activeProject, setActiveProject] = useState(null)
 
   const filteredProjects = activeFilter === "all"
     ? projects
@@ -56,8 +68,12 @@ export default function Portfolio() {
 
         {/* Grille de projets */}
         <div className="portfolio-grid">
-          {filteredProjects.map((p, i) => (
-            <div key={i} className="portfolio-card">
+          {filteredProjects.map((p) => (
+            <div
+              key={p.id}
+              className="portfolio-card"
+              onClick={() => setActiveProject(p)} // 👉 clic ouvre modal
+            >
               <div className="portfolio-image">
                 <img src={p.image} alt={p.title} />
               </div>
@@ -68,6 +84,9 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
+
+        {/* Modal */}
+        <Modal project={activeProject} onClose={() => setActiveProject(null)} />
       </div>
     </section>
   )
