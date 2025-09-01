@@ -14,11 +14,25 @@ const projects = [
     category: "Création site internet",
     images: [argentbank, argentbankLogin, argentbankDashboard, argentbankEdit],
     type: "site",
-    description: "Application bancaire avec authentification, tableau de bord et gestion des transactions.",
     year: 2024,
-    tech: ["React", "Redux", "API REST", "Sass"],
-    url: "https://skyknigth.github.io/ArgentBank"
+    tech: ["React", "Redux", "API REST", "Sass", "Swagger", "Node.js", "SEO"],
+    url: "https://skyknigth.github.io/ArgentBank",
+    description: `
+      Argent Bank est un projet éducatif réalisé dans le cadre de ma formation. 
+      L’objectif était de concevoir une application bancaire front-end moderne en utilisant React et Redux, 
+      connectée à un back-end via des API REST.
+
+      Les principales fonctionnalités développées sont :
+      – Authentification sécurisée des utilisateurs (connexion, déconnexion, gestion des erreurs)
+      – Accès au profil utilisateur avec modification du pseudo
+      – Tableau de bord responsive affichant les comptes bancaires et leurs soldes
+      – Mise en place de bonnes pratiques de Green Code (optimisation des images, composants réutilisables)
+
+      Une spécification Swagger a également été rédigée afin de préparer la phase suivante :
+      la gestion des transactions (consultation, modification et mise à jour via API REST).
+    `
   },
+
   {
     id: 2,
     title: "724EVENTS",
