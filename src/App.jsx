@@ -1,7 +1,10 @@
 import React from 'react'
-import Header from './components/Header.jsx'
+import Header from './components/header.jsx'
 import Slider from './components/Slider.jsx'
-import Portfolio from './components/portfolio.jsx'
+import Portfolio,  { projects } from './components/portfolio.jsx'
+import Apropos from './components/apropos.jsx'
+import Contact from "./components/contact.jsx"
+import Footer from "./components/footer.jsx"
 
 import Competences from './components/competences.jsx'
 import Services from './components/services.jsx'
@@ -34,19 +37,10 @@ export default function App() {
         <Services />
         <Competences />
         <Portfolio />
-        <section id="apropos" className="section">
-          <div className="container">
-            <h2>À propos</h2>
-            <p>Développeur front-end passionné, basé en télétravail.</p>
-          </div>
-        </section>
-        <section id="contact" className="section">
-          <div className="container">
-            <h2>Contact</h2>
-            <p>Écrivez-moi : email@example.com</p>
-          </div>
-        </section>
+        <Apropos projectsCount={projects.length} />
+        <Contact />
       </main>
+      <Footer />
     </>
   )
 }

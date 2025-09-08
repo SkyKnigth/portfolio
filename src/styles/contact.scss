@@ -1,0 +1,91 @@
+.contact {
+  padding: 4rem 2.5cm;
+
+  .contact-header {
+    margin: 0 auto 2.5rem;
+    max-width: 800px;
+    border: 2px solid #2ecc71;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: #fff;
+    text-align: center;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+  }
+
+  /* Cadre vert global */
+  .contact-box {
+    border: 2px solid #2ecc71;
+    border-radius: 12px;
+    padding: 2rem;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-content {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .contact-map {
+    flex: 1.2;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 400px;
+  }
+
+  .contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    label {
+      font-weight: 600;
+      color: #111;
+    }
+
+    input,
+    textarea {
+      padding: 0.8rem;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+      resize: none;
+    }
+
+    textarea {
+      min-height: 150px;
+    }
+
+    .btn-submit {
+      align-self: flex-start;
+      border: 2px solid #2ecc71;
+      background: transparent;
+      color: #2ecc71;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #2ecc71;
+        color: #fff;
+      }
+    }
+  }
+}
+

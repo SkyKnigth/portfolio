@@ -1,0 +1,57 @@
+.footer {
+  border-top: 2px solid #2ecc71;
+  padding: 2rem 3rem; // plus de hauteur et largeur
+   min-height: 200px; // hauteur minimum du footer
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  font-size: 0.95rem;
+  color: #333;
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      color: black;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-center {
+    text-align: center;
+
+    img {
+      height: 100px; // logo plus grand
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  }
+
+  .footer-right {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      color: #2ecc71;
+      font-size: 2rem; // icônes plus grandes
+      transition: transform 0.3s, color 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+        color: #27ae60;
+      }
+    }
+  }
+}

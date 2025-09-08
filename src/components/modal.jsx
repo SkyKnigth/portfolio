@@ -44,18 +44,18 @@ export default function Modal({ project, onClose }) {
         <div className="modal-body">
           <div className="modal-left">
             <h3>Description du projet</h3>
-             <p>{project.description}</p>
+            <p>{project.description}</p>
 
-            {project.categories && (
-                <div className="project-categories">
-                <h4>Catégories :</h4>
-                <ul>
-                    {project.categories.map((cat, i) => (
-                    <li key={i}>{cat}</li>
-                    ))}
-                </ul>
-                </div>
+            {project.features && (
+              <ul>
+                {project.features.map((feat, i) => (
+                  <li key={i}>{feat}</li>
+                ))}
+              </ul>
             )}
+
+            {project.conclusion && <p>{project.conclusion}</p>}
+
           </div>
 
           <div className="modal-right">
@@ -79,7 +79,7 @@ export default function Modal({ project, onClose }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visiter le site
+              Visiter le code du site
             </a>
           </div>
         </div>
