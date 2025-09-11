@@ -5,7 +5,7 @@ export default function Header({ logoSrc }) {
   const [active, setActive] = useState("accueil")
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section, main") // récupère toutes les sections
+    const sections = document.querySelectorAll("section, main") 
     const handleScroll = () => {
       let current = "accueil"
       sections.forEach((section) => {
@@ -25,12 +25,12 @@ export default function Header({ logoSrc }) {
     <header className="site-header">
       <div className="container header-inner">
         
-        {/* Logo (non cliquable) */}
+
         <div className="brand">
           <img src={logoSrc} alt="Logo" />
         </div>
 
-        {/* Navigation */}
+
         <nav className="main-nav" aria-label="Navigation principale">
           <ul>
             <li className={active === "accueil" ? "active" : ""}>

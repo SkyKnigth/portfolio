@@ -10,10 +10,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_g5kfoot",   // 👉 Ton Service ID EmailJS
-        "template_fh97emc",  // 👉 Ton Template ID EmailJS
+        "service_g5kfoot",   
+        "template_fh97emc", 
         form.current,
-        "VRr8-ICqxJc7K2FMM"  // 👉 Ta clé publique EmailJS
+        "VRr8-ICqxJc7K2FMM"  
       )
       .then(
         () => {
@@ -29,16 +29,14 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact">
-      {/* Titre encadré */}
       <div className="contact-header">
         <h2>CONTACTEZ-MOI</h2>
         <p>Vous avez un projet ? Parlons-en !</p>
       </div>
 
-      {/* Cadre vert global */}
       <div className="contact-box">
         <div className="contact-content">
-          {/* Carte centrée sur Maintenon */}
+          {/* Carte*/}
           <div className="contact-map">
             <iframe
               title="Localisation Maintenon"

@@ -3,6 +3,12 @@ import "../styles/modal.scss"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faXmark, faCalendar, faTags } from "@fortawesome/free-solid-svg-icons"
 
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination, Autoplay } from "swiper/modules"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+
 export default function Modal({ project, onClose }) {
   if (!project) return null
 
@@ -29,18 +35,30 @@ export default function Modal({ project, onClose }) {
           </h2>
         </div>
 
-        {/* Images */}
-        <div className="modal-images">
-          {project.images.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`${project.title} - ${index + 1}`}
-            />
-          ))}
+        {/* Slider d’images */}
+        <div className="modal-slider">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            loop={true}
+            spaceBetween={30}
+            slidesPerView={1}
+          >
+            {project.images.map((img, index) => (
+              <SwiperSlide key={index}>
+                <img
+                  src={img}
+                  alt={`${project.title} - ${index + 1}`}
+                  className="modal-slide-img"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
 
-        {/* Texte + infos */}
+        {/* Texte */}
         <div className="modal-body">
           <div className="modal-left">
             <h3>Description du projet</h3>
@@ -55,7 +73,6 @@ export default function Modal({ project, onClose }) {
             )}
 
             {project.conclusion && <p>{project.conclusion}</p>}
-
           </div>
 
           <div className="modal-right">

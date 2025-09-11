@@ -151,6 +151,31 @@
   background: #27ae60;
 }
 
+.modal-slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+}
+
+.modal-slide-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #2ecc71 !important; /* vert */
+  font-size: 2rem !important;
+  font-weight: bold;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: #27ae60 !important; /* vert foncé au survol */
+}
+
 
 @media (max-width: 768px) {
   .modal-images {

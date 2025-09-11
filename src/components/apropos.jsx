@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChalkboardUser } from "@fortawesome/free-solid-svg-icons"
 import "../styles/apropos.scss"
 import profil from "../assets/profile.jpg"
-import cvFile from "../assets/cv.pdf" // Ton PDF placé dans src/assets
+import cvFile from "../assets/cv.pdf" 
 
 export default function Apropos({ projectsCount }) {
   const [count, setCount] = useState(0)
@@ -40,13 +40,12 @@ export default function Apropos({ projectsCount }) {
 
   return (
     <section id="apropos" className="apropos" ref={sectionRef}>
-      {/* Titre encadré */}
+
       <div className="apropos-header">
         <h2>A PROPOS</h2>
         <p>Je suis un apprenti développeur web</p>
       </div>
 
-      {/* Contenu gauche/droite */}
       <div className="apropos-content">
         <div className="apropos-left">
           <h3>Un développeur web passionné !</h3>
@@ -61,7 +60,7 @@ export default function Apropos({ projectsCount }) {
             Curieux et persévérant, je souhaite continuer à évoluer dans ce domaine pour, à terme, devenir un développeur accompli.
           </p>
 
-          {/* Bas du bloc : compteur à gauche + bouton à droite */}
+          {/*compteur  */}
           <div className="apropos-bottom">
             <div className="apropos-counter">
               <FontAwesomeIcon icon={faChalkboardUser} className="counter-icon" />

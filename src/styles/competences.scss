@@ -32,9 +32,9 @@
 
 .competences-grid {
   display: grid;
-  grid-template-columns: repeat(3, 400px); /* ✅ 3 colonnes fixes de 300px */
-  gap: 1.5rem; /* espace entre les cartes */
-  justify-content: center; /* ✅ centre la grille dans la page */
+  grid-template-columns: repeat(3, 400px); 
+  gap: 1.5rem; 
+  justify-content: center; 
 }
 
 .competence-card {
@@ -77,7 +77,7 @@
   color: #333;
 }
 
-/* Responsive */
+
 @media (max-width: 1000px) {
   .competences-grid {
     grid-template-columns: repeat(2, 1fr);

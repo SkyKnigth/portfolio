@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/competences.scss'
 
-// FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
