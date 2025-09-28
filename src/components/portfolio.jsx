@@ -104,7 +104,7 @@ export default function Portfolio() {
             <div
               key={p.id}
               className="portfolio-card"
-              onClick={() => setActiveProject(p)} // clic ouvre modal
+              onClick={() => setActiveProject(p)} 
             >
             <div className="portfolio-image">
                 <img src={p.images[0]} alt={p.title} />

@@ -17,11 +17,11 @@ export default function Contact() {
       )
       .then(
         () => {
-          alert("Message envoyé avec succès ✅")
+          alert("Message envoyé avec succès")
           form.current.reset()
         },
         (error) => {
-          alert("Erreur lors de l'envoi ❌")
+          alert("Erreur lors de l'envoi")
           console.error(error.text)
         }
       )

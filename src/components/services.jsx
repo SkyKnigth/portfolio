@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/services.scss'
 import centerImg from '../assets/conseils_site_web.png'
 
-// FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHouse } from '@fortawesome/free-regular-svg-icons'
 

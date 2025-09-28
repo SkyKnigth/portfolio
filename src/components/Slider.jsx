@@ -33,7 +33,7 @@ export default function Hero({ slides = [] }) {
             role="listitem"
             aria-roledescription="slide"
           >
-            {/* 🔹 Image de fond */}
+            {/* Image de fond */}
             <div 
               className="slide-bg" 
               style={{ backgroundImage: `url(${s.image})` }} 

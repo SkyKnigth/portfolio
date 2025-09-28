@@ -29,12 +29,12 @@
   font-weight: 500;
 }
 
-/* Filtres */
 .portfolio-filters {
   display: flex;
   justify-content: center;
   gap: 2rem;
   margin-bottom: 2rem;
+  flex-wrap: wrap; 
 }
 
 .portfolio-filters button {
@@ -43,9 +43,11 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1rem;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  min-width: 160px; 
+  text-align: center;
 }
 
 .portfolio-filters button.active {
@@ -54,27 +56,25 @@
   border-radius: 6px;
 }
 
-/* Grille */
 .portfolio-grid {
   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 800px));
-  gap: 2.5rem; 
+  grid-template-columns: repeat(auto-fit, minmax(350px, 800px));
+  gap: 2.5rem;
   justify-content: center;
 }
 
-/* Carte projet */
+
 .portfolio-card {
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  width: 100%;   
+  width: 100%;
   text-align: left;
   display: flex;
   flex-direction: column;
   cursor: pointer;
 }
-
 
 .portfolio-image img {
   width: 100%;
@@ -82,15 +82,15 @@
   object-fit: cover;
 }
 
-/* Bloc texte */
+
 .portfolio-info {
   padding: 1rem 1.5rem;
   background: #f5f5f5;
-  transition: background 0.3s ease; /* animation fluide */
+  transition: background 0.3s ease;
 }
 
 .portfolio-card:hover .portfolio-info {
-  background: #ddd; /* gris plus foncé au hover */
+  background: #ddd;
 }
 
 .portfolio-info h3 {
@@ -104,4 +104,49 @@
   margin: 0.2rem 0 0;
   font-size: 0.95rem;
   color: #444;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  main > section {
+    margin-bottom: 2rem;
+  }
+
+  .portfolio-filters {
+    flex-direction: column; 
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .portfolio-filters button {
+    width: 90%;  
+    font-size: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; 
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  main > section {
+    margin-bottom: 3rem;
+  }
+
+  .portfolio-filters {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }

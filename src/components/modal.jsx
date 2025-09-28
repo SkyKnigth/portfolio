@@ -35,7 +35,7 @@ export default function Modal({ project, onClose }) {
           </h2>
         </div>
 
-        {/* Slider d’images */}
+        {/* Slider */}
         <div className="modal-slider">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -58,7 +58,7 @@ export default function Modal({ project, onClose }) {
           </Swiper>
         </div>
 
-        {/* Texte */}
+        {/* Body */}
         <div className="modal-body">
           <div className="modal-left">
             <h3>Description du projet</h3>

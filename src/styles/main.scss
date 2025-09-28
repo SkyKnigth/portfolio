@@ -20,10 +20,10 @@ html {
 }
 
 section[id] {
-  scroll-margin-top: 90px; /* décale le scroll à cause du header fixe */
+  scroll-margin-top: 90px; 
 }
 
-/* Sections */
+
 .section {
   padding: 6rem 0;
   border-top: 1px solid #f0f0f0;
@@ -33,3 +33,14 @@ section[id] {
   p { color: var(--muted); max-width: 70ch; }
 }
 
+@media (max-width: 1024px) {
+  .services .card,
+  .competences .card {
+    padding: 1rem;   // réduire l’espace interne
+    margin: 0.5rem;  // petit espace entre chaque carte
+  }
+
+  .container {
+    padding-inline: 1rem; 
+  }
+}

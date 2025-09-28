@@ -40,10 +40,14 @@ export default function Apropos({ projectsCount }) {
 
   return (
     <section id="apropos" className="apropos" ref={sectionRef}>
-
       <div className="apropos-header">
         <h2>A PROPOS</h2>
         <p>Je suis un apprenti développeur web</p>
+      </div>
+
+      {/* Photo centrée entre les 2 cadres */}
+      <div className="apropos-photo">
+        <img src={profil} alt="Photo de profil" />
       </div>
 
       <div className="apropos-content">
@@ -54,13 +58,13 @@ export default function Apropos({ projectsCount }) {
             J’aime découvrir de nouvelles technologies, comprendre leur fonctionnement et les mettre en pratique à travers des projets concrets.
           </p>
           <p>
-           Mon objectif est de renforcer mes compétences pas à pas, tout en développant de bonnes pratiques de code et en gagnant de l’expérience.
+            Mon objectif est de renforcer mes compétences pas à pas, tout en développant de bonnes pratiques de code et en gagnant de l’expérience.
           </p>
           <p>
             Curieux et persévérant, je souhaite continuer à évoluer dans ce domaine pour, à terme, devenir un développeur accompli.
           </p>
 
-          {/*compteur  */}
+          {/* compteur */}
           <div className="apropos-bottom">
             <div className="apropos-counter">
               <FontAwesomeIcon icon={faChalkboardUser} className="counter-icon" />
@@ -77,11 +81,6 @@ export default function Apropos({ projectsCount }) {
               Voir mon CV
             </a>
           </div>
-        </div>
-
-        {/* Photo */}
-        <div className="apropos-right">
-          <img src={profil} alt="Photo de profil" />
         </div>
       </div>
     </section>
