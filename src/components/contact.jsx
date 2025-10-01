@@ -51,14 +51,14 @@ export default function Contact() {
 
           {/* Formulaire */}
           <form ref={form} onSubmit={sendEmail} className="contact-form">
-            <label>Nom complet</label>
-            <input type="text" name="name" required />
+            <label htmlFor="name">Nom complet</label>
+            <input id="name" type="text" name="name" required />
 
-            <label>Email</label>
-            <input type="email" name="email" required />
+            <label htmlFor="email">Email</label>
+            <input id="email" type="email" name="email" required />
 
-            <label>Message</label>
-            <textarea name="message" required></textarea>
+            <label htmlFor="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
 
             <button type="submit" className="btn-submit">Envoyer</button>
           </form>

@@ -20,11 +20,12 @@ export default function Footer() {
       </div>
 
 
-      <div className="footer-right">
+     <div className="footer-right">
         <a
-          href="https://github.com/SkyKnigth" 
+          href="https://github.com/SkyKnigth"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Profil GitHub de Vincent Hemardinquer"
         >
           <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
@@ -32,6 +33,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/vincent-hemardinquer-7490a7210/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Profil LinkedIn de Vincent Hemardinquer"
         >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>

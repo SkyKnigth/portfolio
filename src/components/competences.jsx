@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons'
 
 const competencesList = [
-  { title: "Communication", text: "Echange clairet constructifs avec l'équipe et les clients" },
+  { title: "Communication", text: "Echange claire et constructifs avec l'équipe et les clients" },
   { title: "JavaScript & React", text: "Mise en place de composants réutilisables avec React, gestion des états avec Redux et intégration d’APIs." },
   { title: "Sass & organisation du code", text: "Structuration des styles avec Sass pour un code clair, modulable et maintenable." },
   { title: "Autonomie", text: "Capacité à travailler seul tout en respectant les objectifs" },
