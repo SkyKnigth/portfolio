@@ -22,7 +22,13 @@
       color: #555;
     }
   }
-
+  
+  .error-message {
+  color: #e74c3c; /* rouge lisible */
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0.8rem;
+  text-align: left;
+  }
 
   .contact-box {
     border: 2px solid #2ecc71;
